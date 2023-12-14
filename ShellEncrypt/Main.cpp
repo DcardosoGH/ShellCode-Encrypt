@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc < 2) {
+    if (argc < 2 || argc > 3) {
         std::cerr << "Usage " << argv[0] << " <ShellCode file> (Optional)<newPayloadFileName>" << std::endl;
         return 1;
     }
@@ -39,4 +39,5 @@ int main(int argc, char *argv[])
  
 
     HeapFree(GetProcessHeap(), 0, pPayload);
+    return 0;
 }
