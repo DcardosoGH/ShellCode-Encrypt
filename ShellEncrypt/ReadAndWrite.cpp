@@ -38,3 +38,18 @@ BOOL ReadPayload(IN const char* FilePath, OUT PSIZE_T pfileSize, OUT PBYTE* ppPa
 
     return TRUE;
 }
+
+
+BOOL WriteNewPayload(IN const char* FilePath, IN PBYTE pPayload, IN SIZE_T dwfileSize) {
+    DWORD	lpNumberOfBytesWritten = NULL;
+    HANDLE hFile = CreateFileA(FilePath, GENERIC_READ | GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (hFile == INVALID_HANDLE_VALUE) {
+        std::cout << "CreateFileA error: " << GetLastError() << std::endl;
+        return -1;
+    }
+
+    if (!WriteFile(hFile, pPayload, dwfileSize, &lpNumberOfBytesWritten, NULL) || dwfileSize != lpNumberOfBytesWritten) {
+        std::cout << "WriteFile error: " << GetLastError() << std::endl;
+        return -1;
+    }
+}

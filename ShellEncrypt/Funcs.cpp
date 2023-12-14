@@ -30,10 +30,10 @@ VOID PrintShellCode(PBYTE pshellCode, SIZE_T size) {
 
 
 VOID XorEncrypt(PBYTE pshellCode, SIZE_T size, BYTE key) {
-    std::cout << "\nThe encryption key is: 0x"
+    std::cout << "\BYTE Key = 0x"
         << std::setfill('0') << std::setw(2)
         << std::hex << std::uppercase
-        << static_cast<int>(key);
+        << static_cast<int>(key) << ";";
     for (size_t i = 0; i < size; i++) {
         pshellCode[i] = pshellCode[i] ^ key;
     }

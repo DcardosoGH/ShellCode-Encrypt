@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
     if (argc < 2) {
-        std::cerr << "Usage " << argv[0] << " <Shell code file path>" << std::endl;
+        std::cerr << "Usage " << argv[0] << " <ShellCode file> (Optional)<newPayloadFileName>" << std::endl;
         return 1;
     }
     const char* filePath = argv[1];
@@ -31,6 +31,12 @@ int main(int argc, char *argv[])
    // getchar();
    // XorEncrypt(pPayload, dwfileSize, key);
    // PrintShellCode(pPayload, dwfileSize);
+
+    if (argc == 3) {
+        const char* fileNameToWrite = argv[2];
+        WriteNewPayload(fileNameToWrite, pPayload, dwfileSize);
+    }
+ 
 
     HeapFree(GetProcessHeap(), 0, pPayload);
 }

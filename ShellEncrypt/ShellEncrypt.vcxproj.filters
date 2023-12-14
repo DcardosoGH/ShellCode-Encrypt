@@ -21,7 +21,7 @@
     <ClCompile Include="Funcs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ReadPayload.cpp">
+    <ClCompile Include="ReadAndWrite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

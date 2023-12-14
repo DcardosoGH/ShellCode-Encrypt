@@ -129,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Funcs.cpp" />
-    <ClCompile Include="ReadPayload.cpp" />
+    <ClCompile Include="ReadAndWrite.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>

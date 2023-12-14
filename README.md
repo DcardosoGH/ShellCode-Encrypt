@@ -10,7 +10,11 @@ This code is meant for research/educational purposes only.
 ## Features
 - Supports Raw payloads.
 - XOR Encryption with a randomized key.
-- Can output to a file if ran with ```.\2ShellEncrypt.exe C:\Users\MyUser\calc.bin > Output.txt```
+
+## Output Options
+- Write a new raw.bin file with: ```.\2ShellEncrypt.exe .\calc.bin .\newPayload.bin```
+	- Make sure to still watch the print statement for the encryption key.
+- If this is not specified, the program will output the encrypted shellcode to the console.
 
 ## Example:
 
@@ -25,6 +29,12 @@ msfvenom -p windows/x64/exec CMD="calc.exe" -f raw -o calc.bin
 ```
 It will output an encoded shellcode variable along with the encryption key.
 
-![Tux, the Linux mascot](/img.png)
+![Print statement](/img3.png)
 
-An optional Decrypt statement is included for debuging/confirmation process. Check the source code for the actual encryption function.
+To generate a new file simply pass in its name
+
+![Create a new file](/img4.png)
+
+An optional Decrypt statement is included in the Source Code for debuging/confirmation process. 
+
+Check the source code for the actual encryption function.
