@@ -28,7 +28,7 @@ VOID PrintShellCode(PBYTE pshellCode, SIZE_T size) {
     std::cout << "\n\};";
 }
 
-
+// Encrypt/Decrypt function
 VOID XorEncrypt(PBYTE pshellCode, SIZE_T size, BYTE key) {
     std::cout << "\BYTE Key = 0x"
         << std::setfill('0') << std::setw(2)
@@ -39,6 +39,7 @@ VOID XorEncrypt(PBYTE pshellCode, SIZE_T size, BYTE key) {
     }
 }
 
+// Generate a random Byte key from 0-255
 BYTE GenerateKey() {
     BYTE random = rand() % 256;
     return random;
