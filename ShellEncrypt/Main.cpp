@@ -17,6 +17,10 @@ int main(int argc, char* argv[])
     SIZE_T dwfileSize = NULL;
     PBYTE pPayload = NULL;
 
+    PBYTE pDPayload = NULL;
+    SIZE_T dPayloadSize = NULL;
+
+
     // Read the Shellcode file passed in as an argument
     if (!ReadPayload(filePath, &dwfileSize, &pPayload)) {
         return -1;
@@ -28,14 +32,13 @@ int main(int argc, char* argv[])
 
     //encrypt and print the new shellcode.
     XorEncrypt(pPayload, dwfileSize, key);
-    PrintShellCode(pPayload, dwfileSize);
+    PrintShellCode(pPayload, dwfileSize, &key);
 
-
-    // Optional print of the decrypted payload to confirm it is correct
-    // std::cout << "\nPress <Enter> to Decrypt the ShellCode\n";
-    // getchar();
-    // XorEncrypt(pPayload, dwfileSize, key);
-    // PrintShellCode(pPayload, dwfileSize);
+    //example use of Decrypt Function
+    //if (!XorDecrypt(pPayload, dwfileSize, key, pDPayload, dPayloadSize)){
+    //    std::cout << "erro" << std::endl;
+    //}
+    //
 
     //If the 3rd argument is passed, write a new file to disk with the shellcode
     if (argc == 3) {
