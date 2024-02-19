@@ -27,9 +27,9 @@ msfvenom -p windows/x64/exec CMD="calc.exe" -f raw -o calc.bin
 ```powershell
 .\2ShellEncrypt.exe C:\Users\MyUser\calc.bin
 ```
-It will output an encoded shellcode variable along with the encryption key.
+It will output an encrypted shellcode variable along with the encryption key and decrypt function.
 
-![Print statement](/img3.png)
+![Print statement](/img5.png)
 
 To generate a new file simply pass in its name
 
